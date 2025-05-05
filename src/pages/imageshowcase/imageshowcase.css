@@ -1,0 +1,272 @@
+/* Reset styles for the component */
+.images-showcase-component * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.images-showcase-component {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.images-showcase-component .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.images-showcase-component #smooth-content .home {
+  overflow: visible;
+  width: 100%;
+  /* set a height because the contents are position: absolute, thus natively there's no height */
+  height: 4000px;
+
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.07) 2px,
+      transparent 2px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px),
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.images-showcase-component .home .header {
+  padding-top: 100px;
+}
+
+.images-showcase-component .home .header h1 {
+  margin-bottom: 1rem;
+}
+
+.images-showcase-component button {
+  position: relative;
+}
+
+.images-showcase-component .box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  line-height: 100px;
+  text-align: center;
+  will-change: transform;
+  width: 200px;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.images-showcase-component .box-a {
+  top: 200px;
+}
+
+.images-showcase-component .box-b {
+  top: 600px;
+}
+
+.images-showcase-component .box-c {
+  top: 1000px;
+}
+
+.images-showcase-component .line {
+  visibility: hidden;
+  width: 2px;
+  height: 4000px;
+  position: absolute;
+  left: 400px;
+  top: 0px;
+  background-color: #777;
+}
+
+.images-showcase-component .title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.images-showcase-component footer {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 6px 10px 10px 12px;
+  border-top-left-radius: 26px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.images-showcase-component .end {
+  position: absolute;
+  top: 2400px;
+  transform: translateY(-100%);
+  font-size: 30px;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.images-showcase-component header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.images-showcase-component header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.images-showcase-component header ul li {
+  display: inline-block;
+}
+
+.images-showcase-component header ul a {
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.images-showcase-component header ul a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.images-showcase-component header .icon {
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+/* IMAGES */
+.images-showcase-component .container {
+  max-width: 2500px;
+  margin: 0 auto;
+}
+
+.images-showcase-component .spacer {
+  height: 100vh;
+}
+
+.images-showcase-component .image-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 33.3vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.images-showcase-component .image-grid .image_cont {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  max-height: 500px;
+}
+
+.images-showcase-component .image-grid img {
+  position: absolute;
+  width: 100%;
+  height: 160%;
+  object-fit: cover;
+  bottom: 0;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(1) {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  height: 95vh;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(2) {
+  grid-column: 2 / span 8;
+  grid-row: 2;
+  height: 60vh;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(3) {
+  grid-column: 4 / span 8;
+  grid-row: 3;
+  height: 60vh;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(3) img {
+  object-position: right;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(4) {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  height: 60vh;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(5) {
+  grid-column: 4 / span 8;
+  grid-row: 5;
+  height: 80vh;
+}
+
+.images-showcase-component .image-grid .image_cont:nth-child(6) {
+  grid-column: 2 / span 8;
+  grid-row: 6;
+  height: 80vh;
+}
+
+@media screen and (min-width: 1000px) {
+  .images-showcase-component .image-grid .image_cont {
+    max-height: unset;
+  }
+
+  .images-showcase-component .image-grid .image_cont:nth-child(2) {
+    grid-column: 2 / span 4;
+  }
+
+  .images-showcase-component .image-grid .image_cont:nth-child(3) {
+    grid-column: 8 / span 4;
+  }
+
+  .images-showcase-component .image-grid .image_cont:nth-child(5) {
+    grid-column: 8 / span 4;
+  }
+
+  .images-showcase-component .image-grid .image_cont:nth-child(6) {
+    grid-column: 2 / span 4;
+  }
+}
+
+.images-showcase-component .overlay {
+  position: fixed;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 10rem;
+  width: 100vw;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.images-showcase-component .overlay div {
+  opacity: 0.2;
+  border-left: 0.5px white solid;
+  border-right: 0.5px white solid;
+}
