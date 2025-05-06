@@ -11,18 +11,23 @@ import image12 from "../../assets/fimux/image-12.jpg"
 
 export default function Images() {
     const imagesRef = useRef(null)
-
     useEffect(() => {
         if (!imagesRef.current) return
 
+        // Register GSAP plugins to ensure they're available
+        gsap.registerPlugin(ScrollTrigger);
+
         // Get all images in the grid
         const images = imagesRef.current.querySelectorAll("img")
+
+        // Store all created ScrollTrigger instances
+        const triggers = [];
 
         // Apply GSAP animations to each image
         images.forEach((img) => {
             const speed = img.getAttribute("data-speed") || "auto"
 
-            gsap.fromTo(
+            const tween = gsap.fromTo(
                 img,
                 {
                     y: 100,
@@ -40,14 +45,28 @@ export default function Images() {
                         scrub: speed === "auto" ? true : Number(speed),
                     },
                 },
-            )
+            );
+
+            // Store the ScrollTrigger instance
+            if (tween.scrollTrigger) {
+                triggers.push(tween.scrollTrigger);
+            }
         })
 
         return () => {
+            // Properly kill all ScrollTrigger instances
+            triggers.forEach(trigger => {
+                if (trigger) trigger.kill();
+            });
 
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+            // Also kill any other ScrollTrigger instances that might have been created
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+            // Clear any GSAP animations that might be running
+            gsap.killTweensOf("*");
         }
     }, [])
+
 
     return (
         <main className="images-showcase-component">

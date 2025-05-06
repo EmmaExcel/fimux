@@ -19,6 +19,7 @@ const FullscreenSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [initialized, setInitialized] = useState(false);
+
   const slidesRef = useRef([]);
   const imagesRef = useRef([]);
   const slideImagesRef = useRef([]);
@@ -71,7 +72,7 @@ const FullscreenSlideshow = () => {
 
     if (currentIndex === slideData.length - 1 && direction === 1) {
       // Navigate to another route
-      navigate('/home');
+      window.location.href = '/home'; // Replace with the actual route
       return; // Exit the function early
     }
 

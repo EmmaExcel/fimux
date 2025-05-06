@@ -9,6 +9,10 @@ import DeliveryPage from '../delivery/Delivery';
 export const Home = () => {
     const containerRef = useRef(null);
     const navigate = useNavigate();
+    const smoothWrapperRef = useRef(null)
+    const smoothContentRef = useRef(null)
+    const pinRef = useRef(null)
+
 
     useEffect(() => {
         const handleScroll = (event) => {
@@ -32,9 +36,6 @@ export const Home = () => {
         };
     }, [navigate]);
     // Change these lines:
-    const smoothWrapperRef = useRef(null)
-    const smoothContentRef = useRef(null)
-    const pinRef = useRef(null)
 
 
     useEffect(() => {
@@ -99,13 +100,13 @@ export const Home = () => {
                     <nav>
                         <ul role="list">
                             <li className='nav-item'>
-                                <a href="#">
+                                <a href="">
                                     About
                                 </a>
-                                <a href="#">
+                                <a href="">
                                     Menu
                                 </a>
-                                <a href="#">
+                                <a href="">
                                     Contact
                                 </a>
                             </li>
