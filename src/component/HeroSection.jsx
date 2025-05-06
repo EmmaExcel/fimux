@@ -7,19 +7,19 @@ import image13 from "../assets/fimux/image-13.jpg"
 import image15 from "../assets/fimux/image-15.jpg"
 import food1 from "../assets/fimux/food-1.jpg"
 import food2 from "../assets/fimux/food-2.jpg"
-import { useNavigate } from 'react-router-dom';
 import video1 from "../assets/fimux/video-1.mp4"
+import { useNavigate } from 'react-router-dom';
 
 
 
 gsap.registerPlugin(Observer);
 
 const FullscreenSlideshow = () => {
-  const navigate = useNavigate();
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [initialized, setInitialized] = useState(false);
-
+  const navigate = useNavigate();
   const slidesRef = useRef([]);
   const imagesRef = useRef([]);
   const slideImagesRef = useRef([]);
@@ -72,7 +72,7 @@ const FullscreenSlideshow = () => {
 
     if (currentIndex === slideData.length - 1 && direction === 1) {
       // Navigate to another route
-      window.location.href = '/home'; // Replace with the actual route
+      navigate('/home');
       return; // Exit the function early
     }
 
